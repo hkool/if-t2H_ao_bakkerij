@@ -19,7 +19,7 @@ $controller->updateView();
 $controller->updateModel(3,"Speltbrood",2.53,"spelt 20%, tarwe", "brood",0);
 $controller->updateView();
 
-$controller->updateModel(3,"Casinobrood",1.30,"wit meel", "brood",0);
+$controller->updateModel(3,"Casinobrood",1.30,"wit meel", "brood",1);
 $controller->updateView();
 
 $controller->getView()->viewSold();

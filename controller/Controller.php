@@ -25,6 +25,12 @@ class Controller
     public function updateModel($id, $naam,  $prijs,$verpakking, $type, $aanbieding){
         $this->model->setArtikel($id, $naam,  $prijs, $verpakking, $type, $aanbieding);
     }
+
+
+//    public function updateModel($id, $naam,  $prijs,$extraEigenschap, $type){
+//        $this->model->setArtikel($id, $naam,  $prijs, $extraEigenschap, $type);
+//    }
+
     public function updateView(){
         $this->view->viewContent();
     }
