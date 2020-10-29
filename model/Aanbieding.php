@@ -6,7 +6,7 @@ namespace model;
 
 interface Aanbieding
 {
-    public function setAanbieding();
+    public function setAanbieding($artikel);
     public function getAanbieding();
     public function setEinddatum();
     public function getEinddatum();

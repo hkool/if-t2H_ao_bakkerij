@@ -9,7 +9,7 @@ include_once ("model/Aanbieding.php");
 class Model implements Aanbieding
 {
     private $content;
-    private $artikel;
+    private $artikelen;
     private $aanbieding;
     private $einddatum;
 
@@ -22,7 +22,7 @@ class Model implements Aanbieding
      */
     public function getArtikel()
     {
-        return $this->artikel;
+        return $this->artikelen;
     }
 
     public function getContent(){
@@ -38,14 +38,14 @@ class Model implements Aanbieding
                $artikel = new Koek($id, $naam, $prijs, $extraEigenschap);
                break;
        }
-        $this->artikel = $artikel;
-       if($aanbieding == 1){
-           $this->setAanbieding();
+        $this->artikelen[] = $artikel;
+       if($aanbieding == "on" && $this->aanbieding == null){
+           $this->setAanbieding($artikel);
        }
     }
-    public function setAanbieding()
+    public function setAanbieding($artikel)
     {
-        $this->aanbieding = $this->artikel;
+        $this->aanbieding = $artikel;
         $this->setEinddatum();
     }
     public function getAanbieding()
