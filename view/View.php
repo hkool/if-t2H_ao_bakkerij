@@ -16,25 +16,31 @@ class View
     {
         echo "<h2>".$this->model->getContent()."</h2>";
 
-        $artikelen = $this->model->getArtikel();
-        foreach ($artikelen as $artikel)
-        {
-            echo "<br /><br />Artikel is: " . $artikel->getNaam();
+        $koeken = $this->model->getKoeken();
+        if($koeken != null) {
+            foreach ($koeken as $artikel) {
+                echo"<br />";
+                echo "<br /><br />Artikel is: " . $artikel->getNaam();
 
-            if (get_class($artikel) == "model\Koek") {
-                echo "<br />Prijs per " . $artikel->getVerpakking() . " is: &euro;  " . number_format($float = $artikel->getPrijs(), $decimals = 2, $dec_point = ",", $thousands_sep = ".");
+                if (get_class($artikel) == "model\Koek") {
+                    echo "<br />Prijs per " . $artikel->getVerpakking() . " is: &euro;  "
+                        . number_format($float = floatval($artikel->getPrijs()),
+                            $decimals = 2, $dec_point = ",", $thousands_sep = ".");
+                }
 
-            }
-            if (get_class($artikel) == "model\Brood") {
-                echo "<br />Prijs per brood is: &euro;  " . number_format($float = $artikel->getPrijs(), $decimals = 2, $dec_point = ",", $thousands_sep = ".");
-                echo"<br />De samenstelling is: ".$artikel->getSamenstelling();
             }
         }
-
-//        echo "<p>";
-//        var_dump(get_class($artikel));
-//        echo "</p>";
-
+        $broden = $this->model->getBroden();
+        if($broden != null){
+            foreach ($broden as $artikel)
+            {
+                echo "<br /><br />Artikel is: " . $artikel->getNaam();
+                if (get_class($artikel) == "model\Brood") {
+                    echo "<br />Prijs per brood is: &euro;  " . number_format($float = $artikel->getPrijs(), $decimals = 2, $dec_point = ",", $thousands_sep = ".");
+                    echo "<br />De samenstelling is: " . $artikel->getSamenstelling();
+                }
+            }
+        }
 
     }
     public function viewSold()

@@ -6,16 +6,16 @@ namespace model;
 
 abstract class Deegwaar
 {
-    private $id;
-    private $naam;
-    private $prijs;
+    protected $id;
+    protected $naam;
+    protected $prijs;
 
-    protected function __construct($id,$naam, $prijs)
-    {
-        $this->id = $id;
-        $this->naam = $naam;
-        $this->prijs = $prijs;
-    }
+//    protected function __construct($id,$naam, $prijs)
+//    {
+//        $this->id = $id;
+//        $this->naam = $naam;
+//        $this->prijs = $prijs;
+//    }
 
     /**
      * @return mixed
@@ -48,7 +48,4 @@ abstract class Deegwaar
     {
         $this->prijs = $prijs;
     }
-
-
-
 }

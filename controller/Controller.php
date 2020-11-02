@@ -24,15 +24,20 @@ class Controller
         return $this->view;
     }
 
-    public function updateModel(){
-        $id = filter_input(INPUT_GET,('id'));
-        $naam = filter_input(INPUT_GET,('naam'));
-        $prijs = filter_input(INPUT_GET,('prijs'));
-        $extraeigenschap = filter_input(INPUT_GET,('extraeigenschap'));
-        $type = filter_input(INPUT_GET,('type'));
-        $aanbieding = filter_input(INPUT_GET,('aanbieding'));
-        $this->model->setArtikel($id, $naam,  $prijs, $extraeigenschap, $type, $aanbieding);
+    public function updateModel()
+    {
+
+        $naam = filter_input(INPUT_POST, ('naam'));
+        $prijs = filter_input(INPUT_POST, ('prijs'));
+        $extraeigenschap = filter_input(INPUT_POST, ('extraeigenschap'));
+        $type = filter_input(INPUT_POST, ('type'));
+        $aanbieding = filter_input(INPUT_POST, ('aanbieding'));
+        $this->model->insertArtikel($naam, $prijs, $extraeigenschap, $type);
     }
+
+
+//        $this->model->setArtikel( $naam,  $prijs, $extraeigenschap, $type, $aanbieding);
+//    }
 
 
 //    public function updateModel($id, $naam,  $prijs,$extraEigenschap, $type){

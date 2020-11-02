@@ -12,12 +12,12 @@ class Brood extends Deegwaar
 
 
 
-    public function __construct($id, $naam, $prijs, $samenstelling)
-    {
-        parent::__construct($id,$naam,$prijs);
-
-        $this->samenstelling = $samenstelling;
-    }
+//    public function __construct($id, $naam, $prijs, $samenstelling)
+//    {
+//        parent::__construct($id,$naam,$prijs);
+//
+//        $this->samenstelling = $samenstelling;
+//    }
 
     /**
      * @return mixed

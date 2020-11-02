@@ -1,14 +1,12 @@
 <?php
 
 
-    echo"<form method='get' >
+    echo"<form method='post' >
     <table>
-    <tr><td>
-    <label for=\"id\">Artikel id</label></td><td>
-    <input type=\"text\" name=\"id\" /></td></tr>
+   
     <tr><td>
     <tr><td>
-    <label for=\"naam\">naam</label></td><td>
+    <label for=\"naam\">Artikel naam</label></td><td>
     <input type=\"text\" name=\"naam\" /></td></tr>
     <tr><td>
     <label for=\"prijs\">prijs</label></td><td>
